@@ -1,5 +1,9 @@
 # Wind Turbine Asset Health — Anomaly Alerts (FastAPI + Streamlit + CI)
 
+
+![Swagger UI](swaggerrr.png)
+
+
 Rüzgâr türbini SCADA benzeri veriden **beklenen güç (expected power)** tahmini yapıp, gerçekleşen güç ile sapmayı (residual) kullanarak **anomali skoru** üreten uçtan uca bir demo sistem.
 
 Bu repo “notebook’ta model” değil; küçük ölçekte **üretime yakın bir akış** gösterir:
