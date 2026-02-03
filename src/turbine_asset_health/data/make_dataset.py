@@ -66,7 +66,7 @@ def make_dataset(cfg: DatasetConfig = DatasetConfig(), out_path: Path = PROCESSE
 
     df = pd.DataFrame(
         {
-            "timestamp": ts.astype("datetime64[ns]"),
+            "timestamp": ts,
             "wind_speed_mps": ws,
             "wind_dir_deg": wind_dir,
             "ambient_temp_c": ambient_temp,
