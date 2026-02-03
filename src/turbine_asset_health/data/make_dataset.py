@@ -42,7 +42,8 @@ def make_dataset(cfg: DatasetConfig = DatasetConfig(), out_path: Path = PROCESSE
 
     rng = np.random.default_rng(cfg.seed)
     periods = int((cfg.days * 24 * 60) / cfg.freq_minutes)
-    ts = pd.date_range(end=pd.Timestamp.utcnow().floor("min"), periods=periods, freq=f"{cfg.freq_minutes}min")
+    end = pd.Timestamp.now(tz="UTC").floor("min").tz_localize(None)  # UTC ama timezone-naive
+    ts = pd.date_range(end=end, periods=periods, freq=f"{cfg.freq_minutes}min")
 
     base = 7.5 + 2.0 * np.sin(np.linspace(0, 10 * math.pi, periods))
     ws = np.clip(base + rng.normal(0, 1.2, size=periods), 0, 30)
